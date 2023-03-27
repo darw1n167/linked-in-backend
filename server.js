@@ -15,8 +15,8 @@ import cacheController from "./utils/cacheController.js";
 
 dotenv.config();
 const PORT = process.env.PORT;
-const sql = postgres("postgresql://postgres:5tOQp55MM6CRY4zSzuny@containers-us-west-77.railway.app:6267/railway");
-export const cache = new Redis("redis://default:1nQuv6n3dznYazXcT7ZS@containers-us-west-86.railway.app:7413");
+const sql = postgres(process.env.DATABASE_URL);
+export const cache = new Redis(process.env.REDIS_URL);
 export const DEFAULT_CACHE_EXPIRATION = 3600;
 const app = express();
 
