@@ -28,7 +28,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 // Serves static files
-app.use(express.static("../iceberg")); // TODO: Adjust for production build folder
+app.use(express.static("../iceberg/dist")); // TODO: Adjust for production build folder
 
 //Routes
 app.route("/register").post(validation, registerController);
